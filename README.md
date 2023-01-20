@@ -25,6 +25,48 @@ _This program takes in a number that is given by the user and then counts up to 
 
 * _A non-integer number will be accepted, but any decimals will be truncated. While the behavior is correct, there is no message indicating that decimals were truncated.  This may be added in the future_
 
+## Tests
+
+Describe: If a number is inputed with 1, 2, or 3, it should be noted
+
+Test: "It should capture that a 1 is found when 1 is inputed"
+Code: replaceNumber(1);
+Expected Output: 1 "Found a 1" 
+
+
+Describe: It should replace any found 1, 2, or 3s with a message, and simply return any other integer
+
+Test: "It should capture that 1 is found and write "Beep!"
+Code: replaceNumber(1);
+Expected Output: "Beep!" 
+
+Test: "It should capture that 2 is found and write "Boop!"
+Code: replaceNumber(2);
+Expected Output: "Beep!" 
+
+Test: "It should capture that 3 is found and write "Won't you be my neighbor?"
+Code: replaceNumber(3);
+Expected Output: "Beep!" 
+
+Test: "It should take in and return a 7"
+Code: replaceNumber(7);
+Expected Output: 7 
+
+
+
+Describe: It should count up to a number
+
+Test: "It should take in 4 and count up to it"
+Code: expandInput(4);
+Expected Output: [0, 1, 2, 3, 4]
+
+Describe: It should decide to make a new line for each item in the array
+
+Test: "It should see that there are 4 items in the array and call the function to make a new line 4 times"
+code: calculateNewLines(4);
+Expected Output: "addNewLines called!" "addNewLines called!" "addNewLines called!" "addNewLines called!" 
+
+
 ## License
 
 _Email Michael with any questions_

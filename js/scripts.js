@@ -2,7 +2,7 @@
 
 function expandInput(userInput){
   let returnArray = [];
-  for(let i = 0; i <= userInput; i++){
+  for(let i = 0; i < userInput; i++){
     returnArray.push(i);
   }
   return returnArray;
@@ -40,10 +40,18 @@ function calculateNewLines(numOfLines){
 
 //UI Logic
 
+function clearForms(){
+  var answerLines= document.getElementsByClassName('ans');
+  while(answerLines[0]){
+    answerLines[0].parentNode.removeChild(answerLines[0]);
+  }
+}
+
 function addNewLine(id){
   let lineId = 'line' + id;
   let newLine = document.createElement('li');
   newLine.setAttribute('id', lineId);
+  newLine.setAttribute('class', 'ans');
   document.getElementById('outputArea').append(newLine);
 } 
 
@@ -65,6 +73,7 @@ function submitButton(event){
     //catch if the user did not input an int
     document.getElementById('flavorText').innerText = "Try putting in an integer instead";
   }else{
+    clearForms();
     document.getElementById('flavorText').innerText = "You put in: " + userInitialInput;
     calculateResults(userInitialInput);
   }

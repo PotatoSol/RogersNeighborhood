@@ -27,7 +27,7 @@ _This program takes in a number that is given by the user and then counts up to 
 
 ## Tests
 
-Describe: replaceNumber()
+>Describe: replaceNumber()
 
 Test: "It should capture that a 1 is found when 1 is inputed"
 Code: replaceNumber(1);
@@ -49,13 +49,13 @@ Test: "It should take in and return a 7"
 Code: replaceNumber(7);
 Expected Output: 7 
 
-Describe: expandInput()
+>Describe: expandInput()
 
 Test: "It should take in 4 and count up to it"
 Code: expandInput(4);
 Expected Output: [0, 1, 2, 3, 4]
 
-Describe: calculateNewLines()
+>Describe: calculateNewLines()
 
 Test: "It should see that there are 4 items in the array and call the function to make a new line 4 times"
 code: calculateNewLines(4);

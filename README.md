@@ -27,14 +27,11 @@ _This program takes in a number that is given by the user and then counts up to 
 
 ## Tests
 
-Describe: If a number is inputed with 1, 2, or 3, it should be noted
+Describe: replaceNumber()
 
 Test: "It should capture that a 1 is found when 1 is inputed"
 Code: replaceNumber(1);
 Expected Output: 1 "Found a 1" 
-
-
-Describe: It should replace any found 1, 2, or 3s with a message, and simply return any other integer
 
 Test: "It should capture that 1 is found and write "Beep!"
 Code: replaceNumber(1);
@@ -52,15 +49,13 @@ Test: "It should take in and return a 7"
 Code: replaceNumber(7);
 Expected Output: 7 
 
-
-
-Describe: It should count up to a number
+Describe: expandInput()
 
 Test: "It should take in 4 and count up to it"
 Code: expandInput(4);
 Expected Output: [0, 1, 2, 3, 4]
 
-Describe: It should decide to make a new line for each item in the array
+Describe: calculateNewLines()
 
 Test: "It should see that there are 4 items in the array and call the function to make a new line 4 times"
 code: calculateNewLines(4);

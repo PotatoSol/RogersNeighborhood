@@ -17,9 +17,9 @@ _This program takes in a number that is given by the user and then counts up to 
 
 ## Setup/Installation Requirements
 
-* _Click on index.html_
-* _Put a integer into the input field_
-* _Click the submit button_
+* _Clone the repository to your machine_
+* _Open the local version on your machine_
+* _Open index.html in your browser, Chrome preferred_
 
 ## Known Bugs
 

@@ -12,28 +12,27 @@ function expandInput(userInput){
 function replaceNumber(inputNum){
   let convertedString = inputNum.toString();
 
-  if((convertedString.indexOf('3') !== -1) && (convertedString.indexOf('1') !== -1) && (convertedString.indexOf('2') !== -1)){
-    convertedString = "Won\'t you beep my boop?";
-
-  } else if((convertedString.indexOf('3') !== -1) && (convertedString.indexOf('1') !== -1)){
-    convertedString = "Won\'t you be my beep?";
-
-  } else if((convertedString.indexOf('3') !== -1) && (convertedString.indexOf('2') !== -1)){
-    convertedString = "Won\'t you be my boop?";
-
-    //If a 3 appears in the output, replace it with the string below
-  } else if(convertedString.indexOf('3') !== -1){
-    convertedString = 'Won\'t you be my neighbor?';
-
-  //Otherwise, if a 2 apears in the output, replace it with the string below
-  } else if (convertedString.indexOf('2') !== -1) {
-    convertedString = 'Boop!';
-  
-  //Otherwise, if a 1 appears in the output, replace it with the strong below
-  } else if (convertedString.indexOf('1') !== -1) {
-    convertedString = 'Beep!';
+  if(convertedString.indexOf('3') !== -1){
+    if(convertedString.indexOf('2') !== -1){
+      if(convertedString.indexOf('1') !== -1) { 
+        convertedString = "Won\'t you beep my boop?";
+      } else {
+        convertedString = "Won\'t you be my boop?";
+      }
+    } else if(convertedString.indexOf('1') !== -1){
+      convertedString = "Won\'t you be my beep?";
+    } else {
+      convertedString = "Won\'t you be my neighbor?";
+    }
+  } else if (convertedString.indexOf('2') !== -1){
+    if (convertedString.indexOf('1') !== -1){
+      convertedString = "Beep boop!";
+    } else {
+      convertedString = "Boop!";
+    }
+  } else if (convertedString.indexOf('1') !== -1){
+    convertedString = "Beep!";
   }
-
   //Returns the inputed number as a string.  If 3, 2, and 1 are not in the string, it won't be changed at all.
   return convertedString;
 }

@@ -9,29 +9,30 @@ function expandInput(userInput){
   return returnArray;
 }
 
+//takes in a number and converts it to a string, further adjusting it based on what number is passed in 
 function replaceNumber(inputNum){
   let convertedString = inputNum.toString();
 
   if(convertedString.indexOf('3') !== -1){
     if(convertedString.indexOf('2') !== -1){
       if(convertedString.indexOf('1') !== -1) { 
-        convertedString = "Won\'t you beep my boop?";
+        convertedString = "Won\'t you beep my boop?"; //If 3, 2, and 1 appear
       } else {
-        convertedString = "Won\'t you be my boop?";
+        convertedString = "Won\'t you be my boop?"; //If 3 and 2 appear
       }
     } else if(convertedString.indexOf('1') !== -1){
-      convertedString = "Won\'t you be my beep?";
+      convertedString = "Won\'t you be my beep?"; //If 3 and 1 appear
     } else {
-      convertedString = "Won\'t you be my neighbor?";
+      convertedString = "Won\'t you be my neighbor?"; //If only 3 appears
     }
   } else if (convertedString.indexOf('2') !== -1){
     if (convertedString.indexOf('1') !== -1){
-      convertedString = "Beep boop!";
+      convertedString = "Beep boop!"; //If 2 and 1 appear
     } else {
-      convertedString = "Boop!";
+      convertedString = "Boop!"; //If only 2 appears
     }
   } else if (convertedString.indexOf('1') !== -1){
-    convertedString = "Beep!";
+    convertedString = "Beep!"; //If only 1 appears
   }
   //Returns the inputed number as a string.  If 3, 2, and 1 are not in the string, it won't be changed at all.
   return convertedString;

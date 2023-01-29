@@ -1,6 +1,7 @@
 //Business Logic functions
 
-function expandInput(userInput){
+//Takes in a number from the user and returns an array that counts from 0 to that number
+function expandInput(userInput){ 
   let returnArray = [];
   for(let i = 0; i < userInput; i++){
     returnArray.push(i);
@@ -10,8 +11,9 @@ function expandInput(userInput){
 
 function replaceNumber(inputNum){
   let convertedString = inputNum.toString();
+
+  //If a 3 appears in the output, replace it with a string
   if(convertedString.indexOf('3') !== -1){
-    //replace with 3
     convertedString = 'Won\'t you be my neighbor?';
   } else if (convertedString.indexOf('2') !== -1) {
     //replace with 2
@@ -23,15 +25,16 @@ function replaceNumber(inputNum){
   return convertedString;
 }
 
+//Takes in a integer...
 function calculateResults(userInput){
-  let userCalcInput = expandInput(userInput);
-  let replacedInput = [];
-  userCalcInput.forEach(ele => replacedInput.push(replaceNumber(ele)));
-  console.log(replacedInput.length);
-  calculateNewLines(replacedInput.length);
+  let userCalcInput = expandInput(userInput); //Expands that integer (See above)
+  let replacedInput = []; //Declares a new array so that we can output it...
+  userCalcInput.forEach(ele => replacedInput.push(replaceNumber(ele))); //Runs a loop on the count up array
+  calculateNewLines(replacedInput.length); //Passes the new array LENGTH into a method to calculate the number of lines
 }
 
-function calculateNewLines(numOfLines){
+//Takes in a number (the length of our array) so that we can add lines in the UI for each element, then populates them
+function calculateNewLines(numOfLines){ 
   for(let i = 0; i <= numOfLines; i++){
     addNewLine(i);
   }
@@ -40,6 +43,7 @@ function calculateNewLines(numOfLines){
 
 //UI Logic
 
+//Removes previous outputs so that the form can be run multiple times
 function clearForms(){
   var answerLines= document.getElementsByClassName('ans');
   while(answerLines[0]){
@@ -47,6 +51,7 @@ function clearForms(){
   }
 }
 
+//Adds one new line, with a unique id
 function addNewLine(id){
   let lineId = 'line' + id;
   let newLine = document.createElement('li');
@@ -55,6 +60,7 @@ function addNewLine(id){
   document.getElementById('outputArea').append(newLine);
 } 
 
+//Populates each line that has been added previously based on their unique id
 function populateLines(ids){
   let tempId = '';
   for (let i = 0; i <= ids; i++){
@@ -66,15 +72,20 @@ function populateLines(ids){
 window.addEventListener("load", function(){
   document.getElementById("submitForm").addEventListener("submit", submitButton);
 });
+
 function submitButton(event){
   event.preventDefault();
-  let userInitialInput = parseInt(document.getElementById('numberInputID').value); //should be a single int
+  //The number inputed in the field here should be a single integer
+  let userInitialInput = parseInt(document.getElementById('numberInputID').value);
+
   if (!userInitialInput){
-    //catch if the user did not input an int
+    //Catches if the user did not enter an integer before hitting submit
     document.getElementById('flavorText').innerText = "Try putting in an integer instead";
+
   }else{
+    //Uses the user's to continue with the program
     clearForms();
-    document.getElementById('flavorText').innerText = "You put in: " + userInitialInput;
+    document.getElementById('flavorText').innerText = "You put in: " + userInitialInput; //Immediately show what the user has input 
     calculateResults(userInitialInput);
   }
 }

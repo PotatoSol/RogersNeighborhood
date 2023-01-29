@@ -12,16 +12,20 @@ function expandInput(userInput){
 function replaceNumber(inputNum){
   let convertedString = inputNum.toString();
 
-  //If a 3 appears in the output, replace it with a string
+  //If a 3 appears in the output, replace it with the string below
   if(convertedString.indexOf('3') !== -1){
     convertedString = 'Won\'t you be my neighbor?';
+
+  //Otherwise, if a 2 apears in the output, replace it with the string below
   } else if (convertedString.indexOf('2') !== -1) {
-    //replace with 2
     convertedString = 'Boop!';
+  
+  //Otherwise, if a 1 appears in the output, replace it with the strong below
   } else if (convertedString.indexOf('1') !== -1) {
-    //replace with 1
     convertedString = 'Beep!';
   }
+
+  //Returns the inputed number as a string.  If 3, 2, and 1 are not in the string, it won't be changed at all.
   return convertedString;
 }
 
@@ -69,6 +73,10 @@ function populateLines(ids){
   }
 }
 
+//===============
+//Code enters here
+//================
+//On load, put an event listener on the submit button
 window.addEventListener("load", function(){
   document.getElementById("submitForm").addEventListener("submit", submitButton);
 });
